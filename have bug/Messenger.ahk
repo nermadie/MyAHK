@@ -1,0 +1,1 @@
+﻿^7:: run C:\Program Files\WindowsApps\FACEBOOK.317180B0BB486_970.11.116.0_x64__8xx8rvfyw5nnt\app\Messenger.exe

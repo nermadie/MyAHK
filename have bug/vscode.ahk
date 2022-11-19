@@ -1,0 +1,1 @@
+﻿^8:: run C:\Users\BRAVO 15\AppData\Local\Programs\Microsoft VS Code\Code.exe

@@ -1,0 +1,1 @@
+﻿^+a:: send {home}+{end}
