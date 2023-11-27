@@ -1,0 +1,2 @@
+#If, WinActive("ahk_exe Code.exe") or WinActive("ahk_exe devenv.exe") or WinActive("ahk_exe eclipse.exe") or WinActive("ahk_exe idea64.exe") or WinActive("ahk_exe pycharm64.exe") or WinActive("ahk_exe phpstorm64.exe") or WinActive("ahk_exe nvim-qt.exe") or WinActive("ahk_exe WindowsTerminal.exe")
+  ^y::send, {esc}{esc}ggyG

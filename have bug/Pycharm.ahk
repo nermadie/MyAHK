@@ -1,0 +1,1 @@
+﻿^3:: run C:\Program Files\JetBrains\PyCharm 2020.1\bin\pycharm64.exe

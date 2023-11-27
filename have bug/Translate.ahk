@@ -1,0 +1,1 @@
+﻿^9:: run C:\Users\BRAVO 15\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\ImplicitAppShortcuts\90a35b54c5b45898\Google Translate.lnk

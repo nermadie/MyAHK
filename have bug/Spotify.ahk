@@ -1,0 +1,1 @@
+﻿^6:: run C:\Program Files\WindowsApps\SpotifyAB.SpotifyMusic_1.162.583.0_x86__zpdnekdrzrea0\Spotify.exe

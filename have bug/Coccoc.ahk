@@ -1,0 +1,1 @@
+﻿^2:: run C:\Users\BRAVO 15\AppData\Local\CocCoc\Browser\Application\browser.exe
