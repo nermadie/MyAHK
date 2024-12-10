@@ -10,8 +10,12 @@
   ;   }
   ; return
   Menu, Transparency, Add, 255, SetTrans
+  Menu, Transparency, Add, 250, SetTrans
+  Menu, Transparency, Add, 245, SetTrans
   Menu, Transparency, Add, 240, SetTrans
+  Menu, Transparency, Add, 235, SetTrans
   Menu, Transparency, Add, 230, SetTrans
+  Menu, Transparency, Add, 225, SetTrans
   Menu, Transparency, Add, 220, SetTrans
   Menu, Transparency, Add, 210, SetTrans
   Menu, Transparency, Add, 200, SetTrans
