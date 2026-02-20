@@ -1,35 +1,17 @@
-﻿^!t::
-  ;   WinGet, currentTransparency, Transparent, A
-  ;   if (currentTransparency = OFF)
-  ;   {
-  ;     WinSet, Transparent, 220, A
-  ;   }
-  ;   else
-  ;   {
-  ;     WinSet, Transparent, OFF, A
-  ;   }
-  ; return
-  Menu, Transparency, Add, 255, SetTrans
-  Menu, Transparency, Add, 250, SetTrans
-  Menu, Transparency, Add, 245, SetTrans
-  Menu, Transparency, Add, 240, SetTrans
-  Menu, Transparency, Add, 235, SetTrans
-  Menu, Transparency, Add, 230, SetTrans
-  Menu, Transparency, Add, 225, SetTrans
-  Menu, Transparency, Add, 220, SetTrans
-  Menu, Transparency, Add, 210, SetTrans
-  Menu, Transparency, Add, 200, SetTrans
-  Menu, Transparency, Add, 190, SetTrans
-  Menu, Transparency, Add, 180, SetTrans
-  Menu, Transparency, Add, 170, SetTrans
-  Menu, Transparency, Add, 160, SetTrans
-  Menu, Transparency, Add, 150, SetTrans
-  Menu, Transparency, Add, 140, SetTrans
-  Menu, Transparency, Add, 100, SetTrans
-  Menu, Transparency, Show
-Return
+﻿#Requires AutoHotkey v2.0
 
-SetTrans: ; subroutine run by menu item
-  Sleep 100 ; delay 100 milliseconds  
-  WinSet, Transparent, %A_ThisMenuItem%, A
-Return
+^!t::
+{
+    ; Tạo menu với các mức độ trong suốt
+    menu := MenuCreate()
+    for transparency in [255, 250, 245, 240, 235, 230, 225, 220, 210, 200, 190, 180, 170, 160, 150, 140, 100] {
+        menu.Add(transparency, (menuItem) => SetTrans(menuItem))
+    }
+    menu.Show() ; Hiển thị menu
+}
+return
+
+SetTrans(menuItem) {
+    Sleep(100) ; Tạm dừng trong 100 mili giây
+    WinSetTransparent(WinExist("A"), menuItem) ; Thiết lập độ trong suốt của cửa sổ hiện tại
+}

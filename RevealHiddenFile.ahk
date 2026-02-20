@@ -1,22 +1,27 @@
-^F2::GoSub,CheckActiveWindow
+#Requires AutoHotkey v2.0
 
-CheckActiveWindow:
-  ID := WinExist("A")
-  WinGetClass,Class, ahk_id %ID%
-  WClasses := "CabinetWClass ExploreWClass"
-  IfInString, WClasses, %Class%
-    GoSub, Toggle_HiddenFiles_Display
-Return
+^F2::CheckActiveWindow()
 
-Toggle_HiddenFiles_Display:
-  RootKey = HKEY_CURRENT_USER
-  SubKey = Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+CheckActiveWindow() {
+    ID := WinExist("A")
+    Class := WinGetClass("ahk_id " ID)
+    WClasses := "CabinetWClass ExploreWClass"
 
-  RegRead, HiddenFiles_Status, % RootKey, % SubKey, Hidden
+    if InStr(WClasses, Class)
+        Toggle_HiddenFiles_Display(ID)
+}
 
-  if HiddenFiles_Status = 2
-    RegWrite, REG_DWORD, % RootKey, % SubKey, Hidden, 1 
-  else 
-    RegWrite, REG_DWORD, % RootKey, % SubKey, Hidden, 2
-  PostMessage, 0x111, 41504,,, ahk_id %ID%
-Return
+Toggle_HiddenFiles_Display(ID) {
+    RootKey := "HKEY_CURRENT_USER"
+    SubKey := "Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced"
+
+    HiddenFiles_Status := RegRead(RootKey "\" SubKey, "Hidden")
+
+    if HiddenFiles_Status = 2 {
+        RegWrite("REG_DWORD", RootKey "\" SubKey, "Hidden", 1)
+    } else {
+        RegWrite("REG_DWORD", RootKey "\" SubKey, "Hidden", 2)
+    }
+
+    PostMessage(0x111, 41504, 0, "", "ahk_id " ID)
+}
